@@ -1,2 +1,2 @@
 # registration_form
-A simple project to practice validating the informations given by the user
+In this project, I will make a program that will recieve and validate the most common informations asked when registering for services at Brasil: CPF (Fisical Person Cadastre), RG (General Registry), CNPJ (National Cadastre of Juridical Person), Phone numbers and Addresses with zip codes.
