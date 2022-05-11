@@ -1,4 +1,6 @@
-# In Brasil, all valid CPF have the format xxx.xxx.xxx-xx 
+# In Brasil, all valid CPF have the format ###.###.###-##
+# But it also has a matematic formula behind it to validate if a number is or is not valid
+from validate_docbr import CPF
 class Cpf:
     def __init__(self, cpf):
         self.cpf = cpf
@@ -8,8 +10,10 @@ class Cpf:
         return self.format_cpf()
 
     def format_cpf(self):
-        return f'{self.cpf[0:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[9:]}'
+        mask = CPF()
+        return mask.mask(self.cpf)
 
     def validate_cpf(self):
-        if len(self.cpf) != 11:
-            raise TypeError('Invalid CPF!') 
+        validator = CPF()
+        if not validator.validate(self.cpf):
+            raise ValueError('Invalid CPF!') 
