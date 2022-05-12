@@ -3,6 +3,12 @@ class RegistrationTime:
     def __init__(self):
         self.registration_time = datetime.today()
 
+    def __str__(self):
+        return self.format_date()
+
+    def format_date(self):
+        return self.registration_time.strftime('%d/%m/%Y %H:%M')
+
     def get_month_registration(self):
         months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'set', 'oct', 'nov', 'dec']
         # registration_time.month goes from  1-12, while index of month goes from 0-11
