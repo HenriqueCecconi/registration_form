@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 class RegistrationTime:
     def __init__(self):
         self.registration_time = datetime.today()
@@ -17,3 +17,6 @@ class RegistrationTime:
     def get_week_registration(self):
         weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
         return weekdays[self.registration_time.weekday()]
+
+    def time_since_register(self):
+        return datetime.today() - self.registration_time
